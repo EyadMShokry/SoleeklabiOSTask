@@ -1,0 +1,6 @@
+framework module Pods_SoleeklabiOSInternshipEyadShokry {
+  umbrella header "Pods-SoleeklabiOSInternshipEyadShokry-umbrella.h"
+
+  export *
+  module * { export * }
+}
