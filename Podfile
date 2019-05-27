@@ -8,4 +8,7 @@ target 'SoleeklabiOSInternshipEyadShokry' do
   # Pods for SoleeklabiOSInternshipEyadShokry
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
 end

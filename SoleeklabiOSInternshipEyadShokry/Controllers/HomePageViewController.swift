@@ -16,7 +16,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var countriesNames = [String]()
     var capitalsNames = [String]()
     @IBOutlet weak var countriesNamesTableView: UITableView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Reading JSON file and Parsing it
     func fetchCountriesData() {
+        performUIUpdatesOnMain {
+            self.activityIndicator.startAnimating()
+        }
+        
         Client.shared().getCountriesNamesAndCapitals(completionHandler: {(countriesData, error) in
             if error != nil {
                 self.showAuthenticationAlert(title: "Error fetching Data", message: "We didn't find any Information, be sure to connect with Internet or try again later")
@@ -45,30 +50,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.capitalsNames.append(country["capital"]!)
                     
                 }
-                print(self.countriesNames)
-                print(self.capitalsNames)
-                
+                self.performUIUpdatesOnMain {
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
+                }
             }
         })
     }
     
-    
-//    func getJsonFromUrl(){
-//        let url = URL(string: COUNTRIES_URL)
-//        URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) -> Void in
-//            if let error = error { print(error); return}
-//            do {
-//                if let countriesArray = try JSONSerialization.jsonObject(with: data!) as? [[String:String]] {
-//                    for country in countriesArray {
-//                        self.countries_names.append(country["name"]!)
-//                    }
-//                }
-//            } catch {print(error)}
-//            OperationQueue.main.addOperation {
-//                self.countriesNamesTableView.reloadData()
-//            }
-//        }).resume()
-//    }
     
     // MARK: - Logout method
     @IBAction func onClickLogoutButton(_ sender: UIBarButtonItem) {
@@ -98,7 +87,7 @@ extension HomePageViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = countriesNamesTableView.dequeueReusableCell(withIdentifier: "country", for: indexPath) as! CountryTableViewCell
+        let cell = countriesNamesTableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
         cell.configureCellWith(countryName: countriesNames[indexPath.row], CapitalName: capitalsNames[indexPath.row])
         
         return cell
