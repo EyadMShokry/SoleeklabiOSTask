@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FBSDKLoginKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -70,6 +71,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onClickGmailLoginButton(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func onClickResetPasswordButton(_ sender: UIBarButtonItem) {
@@ -107,5 +109,60 @@ class LoginViewController: UIViewController {
             self.showAuthenticationAlert(title: title, message: message)
         })
 
+    }
+}
+
+
+extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().clientID = "103681726110-jdnjs5hs75vbigstvq55ads1g6n1ml2l.apps.googleusercontent.com"
+
+        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/userinfo.email")
+        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/userinfo.profile")
+    }
+    
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("Google Sign In DidSignInForUser")
+        if let error = error {
+            self.showAuthenticationAlert(title: "Login Error", message: error.localizedDescription)
+
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
+        
+        // When user is signed in
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
+            if let error = error {
+                self.showAuthenticationAlert(title: "Login Error", message: error.localizedDescription)
+                return
+            }
+            
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePage") {
+                self.present(viewController, animated: true)
+            }
+            
+        })
+    }
+    
+    
+    // Start Google OAuth2 Authentication
+    func sign(_ signIn: GIDSignIn?, present viewController: UIViewController?) {
+        
+        // Showing OAuth2 authentication window
+        if let aController = viewController {
+            present(aController, animated: true) {() -> Void in }
+        }
+    }
+    // After Google OAuth2 authentication
+    func sign(_ signIn: GIDSignIn?, dismiss viewController: UIViewController?) {
+        // Close OAuth2 authentication window
+        dismiss(animated: true) {() -> Void in }
     }
 }

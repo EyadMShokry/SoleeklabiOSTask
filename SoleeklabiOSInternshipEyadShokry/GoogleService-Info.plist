@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>103681726110-72mjaqmnj67cee4i81d8b7c8eoj0p56c.apps.googleusercontent.com</string>
+	<string>103681726110-jdnjs5hs75vbigstvq55ads1g6n1ml2l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.103681726110-72mjaqmnj67cee4i81d8b7c8eoj0p56c</string>
+	<string>com.googleusercontent.apps.103681726110-jdnjs5hs75vbigstvq55ads1g6n1ml2l</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBXarzEgYM1q17Uj4docapLB6OxWaZuk0Q</string>
 	<key>GCM_SENDER_ID</key>
@@ -19,15 +19,15 @@
 	<key>STORAGE_BUCKET</key>
 	<string>soleektask-19933.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:103681726110:ios:096bf9df694c602c</string>
 	<key>DATABASE_URL</key>
