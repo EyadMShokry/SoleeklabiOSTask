@@ -18,7 +18,6 @@
 		86FCA9AF2297B37800A4D7F9 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9AE2297B37800A4D7F9 /* ViewController+Extension.swift */; };
 		86FCA9B2229AF32D00A4D7F9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9B1229AF32D00A4D7F9 /* Client.swift */; };
 		86FCA9B4229AF59800A4D7F9 /* Client+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9B3229AF59700A4D7F9 /* Client+Extension.swift */; };
-		86FCA9B7229B09F000A4D7F9 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9B6229B09F000A4D7F9 /* Countries.swift */; };
 		86FCA9BB229BAF3D00A4D7F9 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9BA229BAF3D00A4D7F9 /* CountryTableViewCell.swift */; };
 		A065F9F6FD4A125F88B4963E /* Pods_SoleeklabiOSInternshipEyadShokry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580B672921965880551EA63C /* Pods_SoleeklabiOSInternshipEyadShokry.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,6 @@
 		86FCA9AE2297B37800A4D7F9 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		86FCA9B1229AF32D00A4D7F9 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		86FCA9B3229AF59700A4D7F9 /* Client+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Extension.swift"; sourceTree = "<group>"; };
-		86FCA9B6229B09F000A4D7F9 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		86FCA9BA229BAF3D00A4D7F9 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		8B92BDAF57F9E03E8E06A4A7 /* Pods-SoleeklabiOSInternshipEyadShokry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoleeklabiOSInternshipEyadShokry.release.xcconfig"; path = "Target Support Files/Pods-SoleeklabiOSInternshipEyadShokry/Pods-SoleeklabiOSInternshipEyadShokry.release.xcconfig"; sourceTree = "<group>"; };
 		F31B9EEB103D14C45E0DF174 /* Pods-SoleeklabiOSInternshipEyadShokry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoleeklabiOSInternshipEyadShokry.debug.xcconfig"; path = "Target Support Files/Pods-SoleeklabiOSInternshipEyadShokry/Pods-SoleeklabiOSInternshipEyadShokry.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				86FCA9B0229AF30A00A4D7F9 /* Networking */,
 				861EA0652297B2B100BBD567 /* Extensions */,
 				861EA05E229795A900BBD567 /* Controllers */,
-				86FCA9B5229B09DC00A4D7F9 /* Models */,
 				86FCA9B8229BAEEF00A4D7F9 /* Views */,
 				861EF7B2228E85E400F8F5C0 /* Assets.xcassets */,
 				861EF7B7228E85E400F8F5C0 /* Info.plist */,
@@ -124,14 +121,6 @@
 				86FCA9B3229AF59700A4D7F9 /* Client+Extension.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		86FCA9B5229B09DC00A4D7F9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				86FCA9B6229B09F000A4D7F9 /* Countries.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		86FCA9B8229BAEEF00A4D7F9 /* Views */ = {
@@ -321,7 +310,6 @@
 				86FCA9B2229AF32D00A4D7F9 /* Client.swift in Sources */,
 				861EA06022979D1800BBD567 /* LoginViewController.swift in Sources */,
 				86FCA9AF2297B37800A4D7F9 /* ViewController+Extension.swift in Sources */,
-				86FCA9B7229B09F000A4D7F9 /* Countries.swift in Sources */,
 				861EF7AC228E85E300F8F5C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

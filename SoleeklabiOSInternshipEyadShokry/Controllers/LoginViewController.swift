@@ -74,22 +74,9 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().signIn()
     }
     
+    
     @IBAction func onClickResetPasswordButton(_ sender: UIBarButtonItem) {
-        let alertControllerWithTextField = UIAlertController(title: "Enter your E-mail", message: "Please, enter your email to send reset password link to it", preferredStyle: .alert)
-        alertControllerWithTextField.addTextField(configurationHandler: { (textField: UITextField!) -> Void in
-            textField.placeholder = "Enter your Email"
-            
-        })
-        let saveAction = UIAlertAction(title: "Send", style: .default, handler: {alert -> Void in
-            let emailTextField = alertControllerWithTextField.textFields![0] as UITextField
-            self.resetPassword(email: emailTextField.text!)
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alertControllerWithTextField.addAction(saveAction)
-        alertControllerWithTextField.addAction(cancelAction)
-        
-        self.present(alertControllerWithTextField, animated: true, completion: nil)
+        createAlertControllerWithTextField()
     }
     
     private func resetPassword(email: String){
@@ -109,6 +96,24 @@ class LoginViewController: UIViewController {
             self.showAuthenticationAlert(title: title, message: message)
         })
 
+    }
+    
+    fileprivate func createAlertControllerWithTextField() {
+        let alertControllerWithTextField = UIAlertController(title: "Enter your E-mail", message: "Please, enter your email to send reset password link to it", preferredStyle: .alert)
+        alertControllerWithTextField.addTextField(configurationHandler: { (textField: UITextField!) -> Void in
+            textField.placeholder = "Enter your Email"
+            
+        })
+        let saveAction = UIAlertAction(title: "Send", style: .default, handler: {alert -> Void in
+            let emailTextField = alertControllerWithTextField.textFields![0] as UITextField
+            self.resetPassword(email: emailTextField.text!)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertControllerWithTextField.addAction(saveAction)
+        alertControllerWithTextField.addAction(cancelAction)
+        
+        self.present(alertControllerWithTextField, animated: true, completion: nil)
     }
 }
 
@@ -151,18 +156,4 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
         })
     }
     
-    
-    // Start Google OAuth2 Authentication
-    func sign(_ signIn: GIDSignIn?, present viewController: UIViewController?) {
-        
-        // Showing OAuth2 authentication window
-        if let aController = viewController {
-            present(aController, animated: true) {() -> Void in }
-        }
-    }
-    // After Google OAuth2 authentication
-    func sign(_ signIn: GIDSignIn?, dismiss viewController: UIViewController?) {
-        // Close OAuth2 authentication window
-        dismiss(animated: true) {() -> Void in }
-    }
 }

@@ -10,8 +10,6 @@ import Foundation
 
 class Client {
     
-    var session = URLSession.shared
-    
     class func shared() -> Client {
         struct Singleton {
             static var shared = Client()
@@ -22,7 +20,6 @@ class Client {
     
     func getCountriesNamesAndCapitals(completionHandler: @escaping(_ result: [Dictionary<String, String>]?, _ error: NSError?) -> Void) {
         let url = buildURLFromParameters([RESTCountriesParameterKeys.Fields:   RESTCountiresParameterValues.Fields])
-        var countriesDictionary = [String: String]()
         
             URLSession.shared.dataTask(with: url) {(data, response, error) in
                 func sendError(_ error: String) {
@@ -69,7 +66,6 @@ class Client {
             components.queryItems!.append(queryItem)
         }
         
-        print(components.url!)
         return components.url!
     }
 }
