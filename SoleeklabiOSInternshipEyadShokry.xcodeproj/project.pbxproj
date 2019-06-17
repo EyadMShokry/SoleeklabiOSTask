@@ -14,6 +14,9 @@
 		861EF7B1228E85E300F8F5C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861EF7AF228E85E300F8F5C0 /* Main.storyboard */; };
 		861EF7B3228E85E400F8F5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861EF7B2228E85E400F8F5C0 /* Assets.xcassets */; };
 		861EF7B6228E85E400F8F5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861EF7B4228E85E400F8F5C0 /* LaunchScreen.storyboard */; };
+		868D31FB229CFE69006FECB6 /* LittersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868D31FA229CFE69006FECB6 /* LittersViewController.swift */; };
+		868D31FD229CFF54006FECB6 /* LitterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868D31FC229CFF54006FECB6 /* LitterCollectionViewCell.swift */; };
+		868D31FF229D03A4006FECB6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868D31FE229D03A4006FECB6 /* String+Extensions.swift */; };
 		86F53E4E228E8A7500858EA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86F53E4D228E8A7500858EA5 /* GoogleService-Info.plist */; };
 		86FCA9AF2297B37800A4D7F9 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9AE2297B37800A4D7F9 /* ViewController+Extension.swift */; };
 		86FCA9B2229AF32D00A4D7F9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCA9B1229AF32D00A4D7F9 /* Client.swift */; };
@@ -33,6 +36,9 @@
 		861EF7B2228E85E400F8F5C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		861EF7B5228E85E400F8F5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		861EF7B7228E85E400F8F5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		868D31FA229CFE69006FECB6 /* LittersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittersViewController.swift; sourceTree = "<group>"; };
+		868D31FC229CFF54006FECB6 /* LitterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitterCollectionViewCell.swift; sourceTree = "<group>"; };
+		868D31FE229D03A4006FECB6 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		86F53E4D228E8A7500858EA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86FCA9AE2297B37800A4D7F9 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		86FCA9B1229AF32D00A4D7F9 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 				861EA05F22979D1800BBD567 /* LoginViewController.swift */,
 				861EA06122979D3200BBD567 /* RegistrationViewController.swift */,
 				861EA06322979D3E00BBD567 /* HomePageViewController.swift */,
+				868D31FA229CFE69006FECB6 /* LittersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -77,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				86FCA9AE2297B37800A4D7F9 /* ViewController+Extension.swift */,
+				868D31FE229D03A4006FECB6 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				86FCA9BA229BAF3D00A4D7F9 /* CountryTableViewCell.swift */,
+				868D31FC229CFF54006FECB6 /* LitterCollectionViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -304,12 +313,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				86FCA9BB229BAF3D00A4D7F9 /* CountryTableViewCell.swift in Sources */,
+				868D31FF229D03A4006FECB6 /* String+Extensions.swift in Sources */,
+				868D31FB229CFE69006FECB6 /* LittersViewController.swift in Sources */,
 				861EA06422979D3E00BBD567 /* HomePageViewController.swift in Sources */,
 				86FCA9B4229AF59800A4D7F9 /* Client+Extension.swift in Sources */,
 				861EA06222979D3200BBD567 /* RegistrationViewController.swift in Sources */,
 				86FCA9B2229AF32D00A4D7F9 /* Client.swift in Sources */,
 				861EA06022979D1800BBD567 /* LoginViewController.swift in Sources */,
 				86FCA9AF2297B37800A4D7F9 /* ViewController+Extension.swift in Sources */,
+				868D31FD229CFF54006FECB6 /* LitterCollectionViewCell.swift in Sources */,
 				861EF7AC228E85E300F8F5C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

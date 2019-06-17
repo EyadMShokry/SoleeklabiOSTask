@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Login methods
     fileprivate func goToHomePage() {
-        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePage")
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LittersController")
         self.present(viewController!, animated: true, completion: nil)
     }
     

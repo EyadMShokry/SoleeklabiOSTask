@@ -13,6 +13,7 @@ import FirebaseAuth
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Variables Diclaration
+    var letter: String = ""
     var countriesNames = [String]()
     var capitalsNames = [String]()
     @IBOutlet weak var countriesNamesTableView: UITableView!
@@ -25,13 +26,40 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         countriesNamesTableView.dataSource = self
         countriesNamesTableView.delegate = self
         
-        fetchCountriesData()
+        fetchCountriesDataWithLitter(litter: self.letter)
+        //fetchCountriesData()
         
         performUIUpdatesOnMain {
             self.countriesNamesTableView.reloadData()
         }
        
     }
+    
+    func fetchCountriesDataWithLitter(litter: String) {
+        
+        Client.shared().getCountriesNamesAndCapitals(completionHandler: {(countriesData, error) in
+            if error != nil {
+                self.showAuthenticationAlert(title: "Error fetching Data", message: "We didn't find any Information, be sure to connect with Internet or try again later")
+            }
+                
+            else if let countries_data = countriesData {
+                for country in countries_data{
+                    if (country["name"]!.hasPrefix(litter)) {
+                        self.countriesNames.append(country["name"]!)
+                        self.capitalsNames.append(country["capital"]!)
+                   }
+                    
+                }
+                self.performUIUpdatesOnMain {
+                    self.countriesNamesTableView.reloadData()
+                    
+                }
+                print(self.countriesNames)
+            }
+        })
+
+    }
+
     
     // MARK: - Reading JSON file and Parsing it
     func fetchCountriesData() {

@@ -23,7 +23,7 @@ class RegistrationViewController: UIViewController {
             
             if error == nil {
                 print("Signup successfull")
-                let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePage")
+                let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LittersController")
                 self.present(viewController!, animated: true, completion: nil)
             }
             else {
